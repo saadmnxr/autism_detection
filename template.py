@@ -47,9 +47,7 @@ backdrop-filter: blur(4px);
 }
 
 
-[data-testid="stSidebarContent"]{
 
-}
 
 
 
