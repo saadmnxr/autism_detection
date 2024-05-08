@@ -242,7 +242,7 @@ Receiving a correct diagnosis of ASD as an adult can help a person understand pa
 
 
 
-<h3><span>*</span></h3>
+<h3><span>* </span></h3>
 
 
 '''
