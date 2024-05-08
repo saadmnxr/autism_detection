@@ -11,31 +11,58 @@ h2{
 font-size : 40px;
 }
 
+h3{
+   font-size: 0.1px;
+   text-align: center; 
+   line-height: 0.1em;
+   margin: 20px 0 10px; 
+} 
+
+h3 span { 
+    background:#fff; 
+    line-height: 2px;
+}
+
+
 b{
-font-size: 20px;
+font-size: 30px;
 font-family: "Times New Roman";
 }
 
 
 [data-testid="stHeader"] {
-background-color : rgba(0,0,0,0);
+background-color : rgba(0,0,0,0.4);
 }
 
 
 [data-testid="stAppViewContainer"] {
-background-image :url("https://www.autismspeaks.org/sites/default/files/styles/hero_desktop/public/Eileen-family_hero_widecrop.jpg.webp?itok=vyQYBMxi")
+background-image :url("https://static.vecteezy.com/system/resources/previews/006/852/804/non_2x/abstract-blue-background-simple-design-for-your-website-free-vector.jpg")
 }
 
 [data-testid="stMarkdownContainer"]{
+background-color : rgba(0,0,0,0.5);
+border-radius: 20px;
+padding-right : 4em;
+padding-left : 1em;
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
+
 }
 
-[data-testid="stAppViewBlockContainer"]{
-background: rgba(255, 255, 255, 0.06);
+[data-testid="block-container"]{
 border-radius: 13px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(4px);
 -webkit-backdrop-filter: blur(4px);
 }
+
+[data-testid="stSidebar"]{
+background-color : rgba(0,0,0,0.4);
+border-radius: 13px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(4px);
+}
+
 
 [data-testid="stDeployButton"],[data-testid="baseButton-headerNoPadding"]{
 border-style: inset;
@@ -45,7 +72,6 @@ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(4px);
 -webkit-backdrop-filter: blur(4px);
 }
-
 
 
 
@@ -71,8 +97,10 @@ ASD begins before the age of 3 years and can last throughout a person’s life, 
 As children with ASD become adolescents and young adults, they may have difficulties developing and maintaining friendships, communicating with peers and adults, or understanding what behaviors are expected in school or on the job. They may come to the attention of healthcare providers because they also have conditions such as anxiety, depression, or attention-deficit/hyperactivity disorder, which occur more often in people with ASD than in people without ASD.  </p>
 
 
+<h3><span>*</span></h3>
+
 <h1> Types of Autism</h1>
-<b> 1.Asperger’s syndrome : </b>
+<b>1) Asperger’s syndrome : </b>
 
 <p> Asperger’s syndrome was the term used before 2013, but now it has been reclassified as level I ASD by the Diagnostic and Statistical Manual of Mental Disorders, Fifth Edition.
 
@@ -86,7 +114,7 @@ Symptoms of Asperger’s syndrome may include:
 -  Become irritated by even little variations in their routine
 -  Easily remember chosen information and facts
 -  Difficulty controlling emotions, which can lead to verbal or behavioral outbursts, self-injurious actions, or tantrums</p>
-<b> 2. Rett syndrome : </b>
+<b>2) Rett syndrome : </b>
 
 <p>Rett syndrome is a type of ASD that affects 1 in every 10,000 women and rarely affects men. It is often diagnosed in children aged 6 to 18 months when they begin to fail developmental milestones or lose previously acquired abilities.
 Many experts now believe Rett syndrome to be part of a disease spectrum caused by mutations in the MECP2 gene, in which there is duplication of the MECP2 gene on the X chromosome.
@@ -103,10 +131,8 @@ Symptoms of Rett syndrome may include:
 -  Seizures
 -  Difficulty breathing
 -  Sleeping problems
--  Scoliosis (abnormal curvature of the spine)
-</p>
-
-<b> 3. Childhood disintegrative disorder (CDD) : </b>
+-  Scoliosis (abnormal curvature of the spine)</p>
+<b> 3) Childhood disintegrative disorder (CDD) : </b>
 <p>
 CDD is a rare condition that was merged into ASD in the Diagnostic and Statistical Manual of Mental Disorders, Fifth Edition.
 The onset of CDD differs from person to person, but mostly, it is seen after three years of age. Due to its late onset, there will be a loss of previously gained skills in social, verbal, and motor (related to movement) functioning in the child.
@@ -131,12 +157,8 @@ The child may have an abnormal function in at least two of the following:
 
 - Communication
 - Social interaction
-- Repetitive interests or behaviors
-
-</p>
-
-
-<b> 4. Kanner’s syndrome (CDD) : </b>
+- Repetitive interests or behaviors</p>
+<b> 4) Kanner’s syndrome (CDD) : </b>
 <p>Kanner’s syndrome is also referred to as classic autistic disorder.
 Children with Kanner's syndrome will appear smart, attentive, and clever, with the disorder's underlying traits such as:
 
@@ -145,8 +167,7 @@ Children with Kanner's syndrome will appear smart, attentive, and clever, with t
 - Obsession with handling objects
 - Communication and interpersonal difficulties
 - A high level of rote memory and visuospatial skills with significant learning problems in other areas</p>
-
-<b>5. Pervasive developmental disorder-not otherwise specified (PDD-NOS</b>
+<b>5) Pervasive developmental disorder-not otherwise specified (PDD-NOS</b>
 <p>
 When a kid with learning and behavioral difficulties does not fulfill all the diagnostic criteria for a particular category of autism, then the diagnosis made will be PDD-NOS.
 PDD-NOS was the diagnosis given to people who fit into this group and were thought to have milder symptoms than those with ASD.
@@ -159,6 +180,8 @@ Symptoms of PDD-NOS may include:
 - Persistent and repetitive actions such as opening and closing doors repeatedly
 - Abnormal sensitivity to taste, sight, sound, smell, and/or touch
 </p>
+
+<h3><span>*</span></h3>
 
 <h1> How is ASD diagnosed? </h1>
 <p>Health care providers diagnose ASD by evaluating a person’s behavior and development. 
@@ -219,5 +242,8 @@ Receiving a correct diagnosis of ASD as an adult can help a person understand pa
 
 
 
+<h3><span>*</span></h3>
+
 
 '''
+
