@@ -13,7 +13,6 @@ from sklearn.preprocessing import LabelBinarizer
 
 from questions import data
 from utils import display_results
-from template import css
 
 asdd = "Autism Spectrum Disorder Detection"
 st.set_page_config(page_title=asdd, page_icon=':brain:')
@@ -59,6 +58,7 @@ backdrop-filter: blur(10px);
 
 [data-testid="stForm"]{
 background-color : rgb(0,0,0);
+
 }
 </style>
 """

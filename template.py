@@ -40,14 +40,19 @@ background-image :url("https://static.vecteezy.com/system/resources/previews/006
 }
 
 [data-testid="stMarkdownContainer"]{
-background-color : rgba(0,0,0,0.5);
+background-color : rgba(0,0,0,0.6);
 border-radius: 20px;
-padding-right : 4em;
+padding-right : 1em;
 padding-left : 1em;
 backdrop-filter: blur(10px);
 -webkit-backdrop-filter: blur(10px);
 
 }
+
+[data-testid="stSidebarNav"]{
+background-color : rgba(255,255,255,0);
+}
+
 
 [data-testid="block-container"]{
 border-radius: 13px;
@@ -56,11 +61,11 @@ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 [data-testid="stSidebar"]{
-background-color : rgba(0,0,0,0.4);
+background-color : rgba(0,0,0,0.3);
 border-radius: 13px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(10px);
--webkit-backdrop-filter: blur(4px);
+-webkit-backdrop-filter: blur(6px);
 }
 
 
