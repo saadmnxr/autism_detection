@@ -2,11 +2,13 @@
 
 import streamlit as st
 from PIL import Image
+# https://static.vecteezy.com/system/resources/previews/006/852/804/non_2x/abstract-blue-background-simple-design-for-your-website-free-vector.jpg
+
 
 page_bg_img = """
 <style>
 [data-testid="stAppViewContainer"]{
-background-image: url("https://static.vecteezy.com/system/resources/previews/006/852/804/non_2x/abstract-blue-background-simple-design-for-your-website-free-vector.jpg");
+background-image: url("https://img.freepik.com/free-vector/gradient-abstract-background_23-2149123400.jpg?w=1060&t=st=1715263555~exp=1715264155~hmac=bccde9bc6a1fc8671e1fcee7f6e445872539c584689bf83e044f45ec263ca71c");
 }
 
 

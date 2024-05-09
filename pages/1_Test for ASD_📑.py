@@ -22,16 +22,10 @@ st.set_page_config(page_title=asdd, page_icon=':brain:')
 
 
 
-
-
-
-
-
-
 page_bg_img = """
 <style>
 [data-testid="stAppViewContainer"]{
-background-image: url("https://static.vecteezy.com/system/resources/previews/006/852/804/non_2x/abstract-blue-background-simple-design-for-your-website-free-vector.jpg");
+background-image: url("https://img.freepik.com/free-vector/gradient-abstract-background_23-2149123400.jpg?w=1060&t=st=1715263555~exp=1715264155~hmac=bccde9bc6a1fc8671e1fcee7f6e445872539c584689bf83e044f45ec263ca71c");
 }
 
 [data-testid="stHeader"] {
@@ -42,8 +36,8 @@ background-color : rgba(0,0,0,0.4);
 background-color : rgba(0,0,0,0.6);
 border-radius: 13px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-padding-right : 4em;
-padding-left : 1em;
+padding-right : 0.9em;
+padding-left : 0.9em;
 backdrop-filter: blur(10px);
 -webkit-backdrop-filter: blur(4px);
 }
@@ -58,7 +52,6 @@ backdrop-filter: blur(10px);
 
 [data-testid="stForm"]{
 background-color : rgb(0,0,0);
-
 }
 </style>
 """
@@ -69,7 +62,7 @@ st.title(asdd)
 
 st.write(
     "This is a screening tool for Autism Spectrum Disorder. Please answer the "
-    "following questions as honestly as possible."
+    "following questions."
 )
 
 
@@ -215,9 +208,15 @@ with st.form("survey"):
     st.subheader("Image method")
     st.text("Please upload an image of the subject:")
 
-    picture = st.file_uploader("Image of subject")
+    picture = st.file_uploader("Image of subject" , type=["png", "jpg", "jpeg"])
+
+    if picture is not None:
+        # Display the image
+        st.image(picture, caption='Uploaded Image', width=300)
 
     submitted = st.form_submit_button("Submit")
+    
+
     if submitted and picture is not None:
         cleaned_answers = list(map(get_clean_answer, answers))
         final_input = {
@@ -242,3 +241,5 @@ with st.form("survey"):
         image_prediction = image_voting.predict(ri)
         display_results(screening_prediction)
         print(image_prediction)
+
+
