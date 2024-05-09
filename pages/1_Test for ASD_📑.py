@@ -36,8 +36,8 @@ background-color : rgba(0,0,0,0.4);
 background-color : rgba(0,0,0,0.6);
 border-radius: 13px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-padding-right : 0.9em;
-padding-left : 0.9em;
+padding-right : 0em;
+padding-left : 0.6em;
 backdrop-filter: blur(10px);
 -webkit-backdrop-filter: blur(4px);
 }
