@@ -2,7 +2,7 @@ css = '''
 <style>
 h1{
 color: white;
-font-size: 70px;
+font-size: 40px;
 text-align: left;
 font-family: "Monospace";
 }
@@ -36,7 +36,7 @@ background-color : rgba(0,0,0,0.4);
 
 
 [data-testid="stAppViewContainer"] {
-background-image :url("https://img.freepik.com/free-vector/gradient-abstract-background_23-2149123400.jpg?w=1060&t=st=1715263555~exp=1715264155~hmac=bccde9bc6a1fc8671e1fcee7f6e445872539c584689bf83e044f45ec263ca71c")
+background-image :url("https://img.freepik.com/premium-photo/bright-puzzles-kids-white_23-2147689859.jpg?w=1060")
 }
 
 [data-testid="stMarkdownContainer"]{

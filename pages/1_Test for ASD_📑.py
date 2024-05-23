@@ -2,6 +2,7 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 import glob
 import pickle
+import time
 
 import cv2
 import numpy as np
@@ -14,9 +15,21 @@ from sklearn.preprocessing import LabelBinarizer
 from questions import data
 from utils import display_results
 
-asdd = "Autism Spectrum Disorder Detection"
-st.set_page_config(page_title=asdd, page_icon=':brain:')
+def calculate_autism_percentage(answers):
+    # Sample calculation of score based on answers (replace with your own logic)
+    score = sum(answers)  # Assuming answers are numerical values
+    
+    # Convert score to percentage (you might need to adjust the scaling)
+    max_score = 10  # Adjust according to your score calculation
+    percentage = (score / max_score) * 100
+    
+    return percentage
 
+
+asdd = "Autism Spectrum Disorder Detection"
+st.set_page_config(page_title=asdd, page_icon=':brain:',initial_sidebar_state="expanded")
+
+# st.set_page_config(page_title=None, page_icon=None, layout="centered", initial_sidebar_state="auto")
 
 
 
@@ -25,7 +38,7 @@ st.set_page_config(page_title=asdd, page_icon=':brain:')
 page_bg_img = """
 <style>
 [data-testid="stAppViewContainer"]{
-background-image: url("https://img.freepik.com/free-vector/gradient-abstract-background_23-2149123400.jpg?w=1060&t=st=1715263555~exp=1715264155~hmac=bccde9bc6a1fc8671e1fcee7f6e445872539c584689bf83e044f45ec263ca71c");
+background-image: url("https://img.freepik.com/premium-photo/bright-puzzles-kids-white_23-2147689859.jpg?w=1060");
 }
 
 [data-testid="stHeader"] {
@@ -33,13 +46,15 @@ background-color : rgba(0,0,0,0.4);
 }
 
 [data-testid="stVerticalBlock"]{
-background-color : rgba(0,0,0,0.6);
+background-color : rgba(0,0,0,0.7);
 border-radius: 13px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-padding-right : 0em;
+padding-right : 15px;
 padding-left : 0.6em;
 backdrop-filter: blur(10px);
 -webkit-backdrop-filter: blur(4px);
+padding-bottom: 15px;
+
 }
 
 [data-testid="stSidebar"]{
@@ -53,6 +68,8 @@ backdrop-filter: blur(10px);
 [data-testid="stForm"]{
 background-color : rgb(0,0,0);
 }
+
+
 </style>
 """
 
@@ -216,30 +233,42 @@ with st.form("survey"):
 
     submitted = st.form_submit_button("Submit")
     
+    # #progress bar
+    # bar = st.progress(50)
+    # time.sleep(3)
+    # bar.progress(100)
 
-    if submitted and picture is not None:
-        cleaned_answers = list(map(get_clean_answer, answers))
-        final_input = {
-            "result": sum(cleaned_answers[:10]),
-            "age": cleaned_answers[10],
-            "gender": to_category(data[11]["options"], cleaned_answers[11]),
-            "ethnicity": to_category(data[12]["options"], cleaned_answers[12]),
-            "jaundice": cleaned_answers[13],
-            "relation": to_category(data[14]["options"], cleaned_answers[14]),
-            "autism": cleaned_answers[15],
-            "age_desc": to_category(data[16]["options"], cleaned_answers[16]),
-        }
-        inputs = cleaned_answers[:10] + list(final_input.values())
-        screening_prediction = screening_voting.predict([inputs])
-        ri = []
-        new_img = Image.open(picture)
-        ri.append(
-            ImageOps.fit(new_img, (64, 64), Image.ANTIALIAS).convert("RGB")
-        )
-        ri = np.array([np.array(im) for im in ri])
-        ri = np.array([cv2.resize(im, (32, 32)).flatten() for im in ri])
-        image_prediction = image_voting.predict(ri)
-        display_results(screening_prediction)
-        print(image_prediction)
+    
 
 
+#calc percent
+
+if submitted and picture is not None:
+    cleaned_answers = list(map(get_clean_answer, answers))
+    final_input = {
+        "result": sum(cleaned_answers[:10]),
+        "age": cleaned_answers[10],
+        "gender": to_category(data[11]["options"], cleaned_answers[11]),
+        "ethnicity": to_category(data[12]["options"], cleaned_answers[12]),
+        "jaundice": cleaned_answers[13],
+        "relation": to_category(data[14]["options"], cleaned_answers[14]),
+        "autism": cleaned_answers[15],
+        "age_desc": to_category(data[16]["options"], cleaned_answers[16]),
+    }
+    inputs = cleaned_answers[:10] + list(final_input.values())
+    screening_prediction = screening_voting.predict([inputs])
+    ri = []
+    new_img = Image.open(picture)
+    ri.append(
+        ImageOps.fit(new_img, (64, 64), Image.ANTIALIAS).convert("RGB")
+    )
+    ri = np.array([np.array(im) for im in ri])
+    ri = np.array([cv2.resize(im, (32, 32)).flatten() for im in ri])
+    image_prediction = image_voting.predict(ri)
+    display_results(screening_prediction)
+    
+    # Calculate autism percentage
+    autism_percentage = calculate_autism_percentage(cleaned_answers[:10])
+
+    # Display the percentage
+    st.success("Likelihood of autism based on screening questions: {:.2f}%".format(autism_percentage))
