@@ -53,7 +53,7 @@ padding-right : 15px;
 padding-left : 0.6em;
 backdrop-filter: blur(10px);
 -webkit-backdrop-filter: blur(4px);
-padding-bottom: 15px;
+padding-bottom: 10px;
 
 }
 
