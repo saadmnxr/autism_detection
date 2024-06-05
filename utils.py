@@ -7,3 +7,5 @@ def display_results(prediction):
         st.warning("Subject may have Autism Spectrum Disorder")
     else:
         st.success("Subject does not have Autism Spectrum Disorder")
+
+

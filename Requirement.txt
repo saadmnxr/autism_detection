@@ -1,0 +1,4 @@
+pip install streamlit streamlit-option-menu opencv-python numpy pandas Pillow scikit-learn
+
+
+pip install streamlit streamlit-option-menu opencv-python numpy pandas Pillow scikit-learn streamlit-extras
