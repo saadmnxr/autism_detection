@@ -241,6 +241,7 @@ with st.form("survey"):
     
 
 
+
 #calc percent
 
 if submitted and picture is not None:
@@ -266,6 +267,8 @@ if submitted and picture is not None:
     ri = np.array([cv2.resize(im, (32, 32)).flatten() for im in ri])
     image_prediction = image_voting.predict(ri)
     display_results(screening_prediction)
+    st.header("Result based on Screening Data")
+
     
     # Calculate autism percentage
     autism_percentage = calculate_autism_percentage(cleaned_answers[:10])

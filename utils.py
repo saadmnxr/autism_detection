@@ -2,7 +2,7 @@ import streamlit as st
 
 
 def display_results(prediction):
-    st.header("Results")
+    st.header("Result based on Image Data")
     if prediction[0] == 1:
         st.warning("Subject may have Autism Spectrum Disorder")
     else:
